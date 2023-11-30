@@ -8,9 +8,12 @@ import { UserModule } from './user/user.module';
 import { User, UserSchema } from './user/user.schema';
 import { UserService } from './user/user.service';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
+
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     MongooseModule.forRoot(`mongodb+srv://bilbaobilbaoasier:${process.env.MONGODB_PWD}@cluster0.zodwqrf.mongodb.net/?retryWrites=true&w=majority`),
     MongooseModule.forFeature([
       {
