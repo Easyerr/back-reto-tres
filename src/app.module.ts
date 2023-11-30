@@ -11,7 +11,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/Congelador'),
+    MongooseModule.forRoot(`mongodb+srv://bilbaobilbaoasier:${process.env.MONGODB_PWD}@cluster0.zodwqrf.mongodb.net/?retryWrites=true&w=majority`),
     MongooseModule.forFeature([
       {
         name: Congelador.name,
